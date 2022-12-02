@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const ProductDetails = () => {
@@ -6,6 +7,12 @@ const ProductDetails = () => {
   return (
     <div>
       <h1>ProductDetails VIEW {router.query.productId}</h1>
+
+      <div>
+        <Link href="/product">
+          <a>Product</a>
+        </Link>
+      </div>
     </div>
   );
 };

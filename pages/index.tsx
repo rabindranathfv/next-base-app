@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -21,6 +22,41 @@ const Home: NextPage = () => {
           Get started by editing{" "}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
+
+        <div className={styles.description}>
+          <ul>
+            <li>
+              <Link href="/blog">
+                <a>Blog</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/profile">
+                <a>Profile</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/product">
+                <a>Product</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/product/sweater">
+                <a>Product / sweater </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/docs">
+                <a>Docs </a>
+              </Link>
+            </li>
+          </ul>
+        </div>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

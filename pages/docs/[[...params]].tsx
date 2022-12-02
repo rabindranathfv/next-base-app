@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 // route exampel as /docs/feature<1....n>/concepts<1....n>
@@ -25,6 +26,12 @@ const Docs = () => {
   return (
     <div>
       <h1>Docs VIEW</h1>
+
+      <div>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+      </div>
     </div>
   );
 };

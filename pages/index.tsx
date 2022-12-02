@@ -2,9 +2,16 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    // programaticly routing
+    router.push("/docs");
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -51,9 +58,7 @@ const Home: NextPage = () => {
               </Link>
             </li>
             <li>
-              <Link href="/docs">
-                <a>Docs </a>
-              </Link>
+              <button onClick={handleRedirect}>Docs</button>
             </li>
           </ul>
         </div>

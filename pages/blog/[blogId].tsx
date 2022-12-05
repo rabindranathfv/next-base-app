@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next/types";
-import { ParsedUrlQuery } from "querystring";
-import { IBlog } from "../../src/components/blogDetail";
+import BlogDetail, { IBlog } from "../../src/components/blogDetail";
 import { Blog } from "../../src/interfaces/blog.interface";
 
 const Blog = ({ blog }: IBlog) => {
@@ -9,10 +8,7 @@ const Blog = ({ blog }: IBlog) => {
   const { blogId } = route.query;
   return (
     <div id={blogId?.toString()}>
-      <pre>{JSON.stringify(blog, null, 0)}</pre>
-      <h2> Title: {blog.title}</h2>
-      <p>Content: {blog.body}</p>
-      <p>Power By userId: {blog.userId.toString()}</p>
+      <BlogDetail blog={blog} />
     </div>
   );
 };
@@ -27,7 +23,12 @@ export async function getStaticPaths() {
     params: { blogId: blog.id.toString() },
   }));
 
-  return { paths, fallback: false };
+  return {
+    paths,
+    // fallback: true make request on build time, generate new static files with those request and you can use router with isFallback property if needed for give UI Feedback,
+    // fallback: blocking request on build time, generate new static files but doest have any connection with UI Interface
+    fallback: false,
+  };
 }
 
 export async function getStaticProps(context: GetServerSidePropsContext) {
@@ -36,7 +37,6 @@ export async function getStaticProps(context: GetServerSidePropsContext) {
     `https://jsonplaceholder.typicode.com/posts/${params?.blogId}`
   );
   const data = await resp.json();
-  console.log("🚀 ~ file: index.tsx:24 ~ getStaticProps ~ data", data);
 
   return {
     props: {

@@ -23,7 +23,6 @@ export default ListBlogs;
 export async function getStaticProps() {
   const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await resp.json();
-  console.log("🚀 ~ file: index.tsx:24 ~ getStaticProps ~ data", data);
 
   return {
     props: {

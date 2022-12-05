@@ -7,7 +7,6 @@ export interface IBlog {
 const BlogDetail = ({ blog }: IBlog) => {
   return (
     <>
-      <pre>{JSON.stringify(blog, null, 0)}</pre>
       <h2> Title: {blog.title}</h2>
       <p>Content: {blog.body}</p>
       <p>Power By userId: {blog.userId.toString()}</p>

@@ -1,0 +1,34 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "news art 1",
+      "description": "descrp 1",
+      "category": "sports"
+    },
+    {
+      "id": 2,
+      "title": "news art 2",
+      "description": "descrp 2",
+      "category": "politics"
+    },
+    {
+      "id": 3,
+      "title": "news art 3",
+      "description": "descrp 3",
+      "category": "sports"
+    },
+    {
+      "id": 4,
+      "title": "news art 4",
+      "description": "descrp 4",
+      "category": "politics"
+    },
+    {
+      "id": 5,
+      "title": "news art 5",
+      "description": "descp 5",
+      "category": "arts"
+    }
+  ]
+}

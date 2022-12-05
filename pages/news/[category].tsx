@@ -33,7 +33,11 @@ export default ListNewsByCategory;
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const { params } = context;
+  const { params, req, res, query } = context;
+  console.log("🚀 ~ file: [category].tsx:37 ~ query", query);
+  console.log(req.headers.cookie);
+  res.setHeader("Set-Cookie", ["name=LearningNext"]);
+
   const { category } = params as ParsedUrlQuery;
   const fetchUrl = `http://localhost:4000/news?category=${category}`;
   const resp = await fetch(fetchUrl);

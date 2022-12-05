@@ -1,4 +1,48 @@
 {
+  "Events": [
+    {
+      "id": 1,
+      "title": "event 1",
+      "description": "descrp 1",
+      "category": "sports",
+      "date": "April 25"
+    },
+    {
+      "id": 2,
+      "title": "event 2",
+      "description": "descrp 2",
+      "category": "technology",
+      "date": "May 25"
+    },
+    {
+      "id": 3,
+      "title": "event 3",
+      "description": "descrp 3",
+      "category": "sports",
+      "date": "June 25"
+    },
+    {
+      "id": 4,
+      "title": "event 4",
+      "description": "descrp 4",
+      "category": "sports",
+      "date": "July 25"
+    },
+    {
+      "id": 5,
+      "title": "event 5",
+      "description": "descrp 5",
+      "category": "sports",
+      "date": "April 20"
+    },
+    {
+      "id": 6,
+      "title": "event 6",
+      "description": "descrp 6",
+      "category": "technology",
+      "date": "August 25"
+    }
+  ],
   "dashboard": {
     "post": 5,
     "likes": 10,

@@ -37,7 +37,8 @@ const EventList = ({ eventList }: IEventList) => {
         return (
           <div key={event.id.toString()}>
             <h2>
-              {event.id} {event.title} {event.Date} | {event.category}
+              {event.id.toString()} {event.title} {event.Date} |{" "}
+              {event.category}
             </h2>
             <p>{event.description}</p>
             <hr />

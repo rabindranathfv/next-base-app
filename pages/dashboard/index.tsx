@@ -30,10 +30,10 @@ const Dashboard: () => React.ReactNode | React.ReactNode[] = () => {
     <div>
       <h1>Dashboard Data</h1>
       <>
-        <p>POSTS: {dasboardData?.post}</p>
-        <p>LIKES: {dasboardData?.likes}</p>
-        <p>FOLLOWERS: {dasboardData?.followers}</p>
-        <p>FOLLOWING: {dasboardData?.following}</p>
+        <p>POSTS: {dasboardData?.post.toString()}</p>
+        <p>LIKES: {dasboardData?.likes.toString()}</p>
+        <p>FOLLOWERS: {dasboardData?.followers.toString()}</p>
+        <p>FOLLOWING: {dasboardData?.following.toString()}</p>
       </>
     </div>
   );

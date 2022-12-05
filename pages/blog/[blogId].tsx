@@ -42,5 +42,9 @@ export async function getStaticProps(context: GetServerSidePropsContext) {
     props: {
       blog: data,
     },
+    // if you want to use ISR, you can use option revalidate setup on seconds for make request
+    // this option affect on build time and production after renerate ssg with requests
+    // nextJs handle the data with his internal cache
+    revalidate: 10, // works better getting data from and API
   };
 }

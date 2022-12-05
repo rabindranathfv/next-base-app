@@ -28,5 +28,6 @@ export async function getStaticProps() {
     props: {
       blogs: data.slice(0, 10),
     },
+    revalidate: 10,
   };
 }

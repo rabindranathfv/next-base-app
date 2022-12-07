@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+interface Comment {
+  id: Number;
+  text: string;
+}
+
 const Comments = () => {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
@@ -18,7 +23,17 @@ const Comments = () => {
       body: JSON.stringify({ comment }),
     });
     const data = await resp.json();
-    console.log("🚀 ~ file: index.tsx:21 ~ createComment ~ data", data);
+    console.log("🚀 ~ file: index.tsx:26 ~ createComment ~ data", data);
+    getAllComments();
+  };
+
+  const deleteById = async (id: Number) => {
+    const resp = await fetch(`/api/comments/${id}`, {
+      method: "DELETE",
+    });
+    const data = await resp.json();
+    console.log("🚀 ~ file: index.tsx:35 ~ deleteById ~ data", data);
+    getAllComments();
   };
 
   return (
@@ -38,8 +53,13 @@ const Comments = () => {
       <div>
         <ul>
           {comments.length > 0 &&
-            comments.map((c) => {
-              return <li key={c.id.toString()}>{c.text}</li>;
+            comments.map((c: Comment) => {
+              return (
+                <>
+                  <li key={c.id.toString()}>{c.text}</li>
+                  <button onClick={() => deleteById(c.id)}>delete</button>
+                </>
+              );
             })}
         </ul>
       </div>

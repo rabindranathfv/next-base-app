@@ -2,10 +2,17 @@ import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next/types";
 import React, { useEffect, useState } from "react";
 
+import styled from "styled-components";
+
 interface Comment {
   id: Number;
   text: string;
 }
+
+const ComentsStyled = styled.p`
+  font-size: 36px;
+  color: ${({ theme }) => theme.colors.primary};
+`;
 
 const CommentDetail = (props: any) => {
   console.log("🚀 ~ file: [commentId].tsx:13 ~ CommentDetail ~ props", props);
@@ -30,9 +37,9 @@ const CommentDetail = (props: any) => {
     <div>
       <h1>CommentDetail of {commentId}</h1>
 
-      <p>
+      <ComentsStyled>
         {comment.id?.toString()} - {comment.text}
-      </p>
+      </ComentsStyled>
     </div>
   );
 };

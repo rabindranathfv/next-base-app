@@ -58,6 +58,11 @@ const Home: NextPage = () => {
               </Link>
             </li>
             <li>
+              <Link href="/events">
+                <a>Events </a>
+              </Link>
+            </li>
+            <li>
               <button onClick={handleRedirect}>Docs</button>
             </li>
           </ul>
